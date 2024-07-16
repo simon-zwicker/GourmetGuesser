@@ -10,7 +10,6 @@ import Foundation
 @Observable
 class GameUtils {
     var playerName: String = ""
-    var hardMode: Bool = false
 
     // MARK: - RoundData
     let maxRounds: Int = 5
@@ -21,7 +20,21 @@ class GameUtils {
     }
 
     var currentGourmet: Gourmet? {
-        gourmetsRound[currentRound]
+        return gourmetsRound[currentRound]
+    }
+
+    var selectedCorrectCountry: Bool {
+        selected?.rawValue == currentGourmet?.country
+    }
+
+    var bouncy: [Bouncy] {
+        guard let currentGourmet else { return [] }
+        var ingredients: [Ingredient] = []
+        for ingredient in currentGourmet.ingredients {
+            guard let first = allIngredients.first(where: { $0.id == ingredient }) else { continue }
+            ingredients.append(first)
+        }
+        return ingredients.compactMap({ Bouncy(name: $0.name, image: "") })
     }
 
     private var gourmetsRound: [Int: Gourmet] = [:]
@@ -33,6 +46,11 @@ class GameUtils {
     private var allGourmets: [Gourmet] = .init()
     private var allIngredients: [Ingredient] = .init()
     private var allCountries: [Country] = .init()
+
+    func nextRound() {
+        currentRound += 1
+        selected = nil
+    }
 
     func startGame() {
         currentRound = 0

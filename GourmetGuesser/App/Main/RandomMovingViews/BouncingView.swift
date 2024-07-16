@@ -1,14 +1,22 @@
 import SwiftUI
 
 struct BouncingView: View {
-    @State var bouncy: [Bouncy] = [Bouncy(name: "heart", image: "heart.fill"), Bouncy(name: "circle", image: "circle.fill"), Bouncy(name: "square", image: "square.fill")]
+    @State var bouncy: [Bouncy]
+    @AppStorage("gameHardMode") var hardMode: Bool = false
 
     var body: some View {
         GeometryReader { geometry in
             ForEach(0..<bouncy.count) { index in
                 VStack {
-                    Image(systemName: bouncy[index].image)
-                    Text(bouncy[index].name)
+                    Image(bouncy[index].image.isEmpty ? "appLogo": bouncy[index].image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+
+                    if !hardMode {
+                        Text(bouncy[index].name)
+                            .font(.Bold.regular)
+                    }
                 }
                 .frame(height: 50)
                 .position(bouncy[index].position)
@@ -23,7 +31,7 @@ struct BouncingView: View {
     }
 
     private func startTimer(size: CGSize, index: Int)-> Timer {
-        return Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
+        return Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { _ in
             updatePosition(for: size, index: index)
         }
     }
@@ -46,13 +54,8 @@ struct BouncingView: View {
             newPosition.y = max(25, min(newPosition.y, size.height - 25))
         }
 
-        withAnimation(.linear(duration: 0.02)) {
+        withAnimation(.linear(duration: 0.04)) {
             bouncy[index].position = newPosition
         }
     }
-}
-
-#Preview {
-    BouncingView()
-        .frame(width: 400, height: 500)
 }
