@@ -35,15 +35,13 @@ struct MainScreen: View {
                             .fill(.green.secondary)
                         
                     }
-                Button {
-                    if nameInput.isEmpty {
-                        showNameEmpty = true
-                        return
+                    .onTapGesture {
+                        if nameInput.isEmpty {
+                            showNameEmpty = true
+                            return
+                        }
+                        game = Game(name: nameInput)
                     }
-                    game = Game(name: nameInput)
-                } label: {
-                    
-                }
                 Spacer()
                 Spacer()
                 .alert("Name darf nicht leer sein", isPresented: $showNameEmpty) {
