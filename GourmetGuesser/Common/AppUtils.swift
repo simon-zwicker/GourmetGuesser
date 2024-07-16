@@ -14,6 +14,7 @@ class AppUtils {
     private(set) var gourmets: [Gourmet] = .init()
     private(set) var ingredients: [Ingredient] = .init()
     private(set) var countries: [Country] = .init()
+    private(set) var scores: [Score] = .init()
     private(set) var isLoading: Bool = true
 
 
@@ -23,6 +24,7 @@ class AppUtils {
         do {
             self.ingredients = try await fetchIngredients()
             self.gourmets = try await fetchGourmets()
+            self.scores = try await fetchScores()
             self.convertCountries()
             self.isLoading.setFalse()
         } catch {
@@ -44,6 +46,15 @@ class AppUtils {
             PocketBase<Ingredient>.self,
             environment: .foodGame,
             endpoint: FoodGameAPI.ingredients
+        )
+        return data.items
+    }
+
+    private func fetchScores() async throws -> [Score] {
+        let data = try await Network.request(
+            PocketBase<Score>.self,
+            environment: .foodGame,
+            endpoint: FoodGameAPI.highscore
         )
         return data.items
     }

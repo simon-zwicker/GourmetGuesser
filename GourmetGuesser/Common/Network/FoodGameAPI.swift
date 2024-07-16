@@ -11,6 +11,8 @@ import Mammut
 enum FoodGameAPI {
     case gourmet
     case ingredients
+    case highscore
+    case addHighscore(String, Int)
 }
 
 // MARK: - API Definitions
@@ -21,12 +23,16 @@ extension FoodGameAPI: Endpoint {
         switch self {
         case .gourmet: "/gourmet/records"
         case .ingredients: "/ingredients/records"
+        case .highscore, .addHighscore: "/highscoreGG/records"
         }
     }
 
     // MARK: - Method
     var method: MammutMethod {
-        .get
+        switch self {
+        case .addHighscore(let string, let int): .post
+        default: .get
+        }
     }
 
     // MARK: - Headers
@@ -40,15 +46,24 @@ extension FoodGameAPI: Endpoint {
         switch self {
         case .ingredients:
             parameters["perPage"] = "100"
-            return parameters
+
+        case .addHighscore(let name, let points):
+            parameters["name"] = name
+            parameters["points"] = points
 
         default:
             return parameters
         }
+        return parameters
     }
 
     // MARK: - Encoding
     var encoding: Encoding {
-        .url
+        switch self {
+        case .addHighscore(let string, let int):
+            .json
+        default:
+                .url
+        }
     }
 }
