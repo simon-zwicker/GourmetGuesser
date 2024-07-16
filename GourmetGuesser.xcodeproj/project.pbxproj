@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4F0F23DB2C4678DA00797042 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DA2C4678DA00797042 /* Country.swift */; };
-		4F0F23DE2C467FB300797042 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4F0F23E02C4681A100797042 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4F0F23DE2C467FB300797042 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DD2C467FB300797042 /* GameScreen.swift */; };
+		4F0F23E02C4681A100797042 /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DF2C4681A100797042 /* GameUtils.swift */; };
+		4F0F23E22C468D0100797042 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23E12C468D0100797042 /* StartView.swift */; };
+		4F0F23E42C468D4E00797042 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23E32C468D4E00797042 /* GameView.swift */; };
 		4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */; };
 		4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C02C46608400FE68D9 /* MainScreen.swift */; };
 		4FFBC3C32C46608500FE68D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C22C46608500FE68D9 /* Assets.xcassets */; };
@@ -30,13 +32,16 @@
 		4FFBC3F12C466EF500FE68D9 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */; };
 		4FFBC3F62C4671A800FE68D9 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3F52C4671A800FE68D9 /* LoadingScreen.swift */; };
 		A61A4BD92C47082C00547024 /* BouncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BD82C47082B00547024 /* BouncingView.swift */; };
-		A61A4BDD2C4709C600547024 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BDB2C4709C600547024 /* Game.swift */; };
 		A61A4BDF2C4709E900547024 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BDE2C4709E900547024 /* GuessView.swift */; };
 		A61A4BE12C4709FA00547024 /* Bouncy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BE02C4709FA00547024 /* Bouncy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F0F23DA2C4678DA00797042 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4F0F23DD2C467FB300797042 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		4F0F23DF2C4681A100797042 /* GameUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		4F0F23E12C468D0100797042 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		4F0F23E32C468D4E00797042 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4FFBC3BB2C46608400FE68D9 /* GourmetGuesser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetGuesser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetGuesserApp.swift; sourceTree = "<group>"; };
 		4FFBC3C02C46608400FE68D9 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -56,7 +61,6 @@
 		4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		4FFBC3F52C4671A800FE68D9 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		A61A4BD82C47082B00547024 /* BouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingView.swift; sourceTree = "<group>"; };
-		A61A4BDB2C4709C600547024 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A61A4BDE2C4709E900547024 /* GuessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
 		A61A4BE02C4709FA00547024 /* Bouncy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +89,9 @@
 		4F0F23DC2C467FA700797042 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4F0F23DD2C467FB300797042 /* GameScreen.swift */,
+				4F0F23E12C468D0100797042 /* StartView.swift */,
+				4F0F23E32C468D4E00797042 /* GameView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				4FFBC3E52C46670000FE68D9 /* Extensions */,
 				4FFBC3D02C46622B00FE68D9 /* Network */,
 				4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */,
+				4F0F23DF2C4681A100797042 /* GameUtils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -217,7 +225,6 @@
 		A61A4BDC2C4709C600547024 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A61A4BDB2C4709C600547024 /* Game.swift */,
 				A61A4BE02C4709FA00547024 /* Bouncy.swift */,
 			);
 			name = Model;
@@ -321,15 +328,16 @@
 				4FFBC3E22C46649200FE68D9 /* OpenFoodAPI.swift in Sources */,
 				4FFBC3DE2C46642800FE68D9 /* Network.swift in Sources */,
 				4FFBC3E92C46672400FE68D9 /* Font.swift in Sources */,
+				4F0F23E22C468D0100797042 /* StartView.swift in Sources */,
 				4FFBC3EB2C466CFF00FE68D9 /* PocketBase.swift in Sources */,
 				4FFBC3EF2C466D3700FE68D9 /* Ingredient.swift in Sources */,
 				4F0F23DB2C4678DA00797042 /* Country.swift in Sources */,
+				4F0F23E42C468D4E00797042 /* GameView.swift in Sources */,
 				4FFBC3E72C46670800FE68D9 /* Color.swift in Sources */,
-				A61A4BDD2C4709C600547024 /* Game.swift in Sources */,
-				4F0F23E02C4681A100797042 /* (null) in Sources */,
 				A61A4BDF2C4709E900547024 /* GuessView.swift in Sources */,
-				4F0F23DE2C467FB300797042 /* (null) in Sources */,
 				A61A4BE12C4709FA00547024 /* Bouncy.swift in Sources */,
+				4F0F23E02C4681A100797042 /* GameUtils.swift in Sources */,
+				4F0F23DE2C467FB300797042 /* GameScreen.swift in Sources */,
 				4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */,
 				4FFBC3E02C46647600FE68D9 /* ErrorObj.swift in Sources */,
 			);
