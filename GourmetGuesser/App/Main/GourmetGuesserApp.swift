@@ -9,9 +9,25 @@ import SwiftUI
 
 @main
 struct GourmetGuesserApp: App {
+
+    // MARK: - States
+    @State private var utils: AppUtils = .init()
+
     var body: some Scene {
         WindowGroup {
-            MainScreen()
+            ZStack {
+                if utils.isLoading {
+                    LoadingScreen()
+                } else {
+                    MainScreen()
+                        .environment(utils)
+                }
+            }
+            .onAppear {
+                Task {
+                    await utils.fetch()
+                }
+            }
         }
     }
 }
