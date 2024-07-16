@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F0F23DB2C4678DA00797042 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DA2C4678DA00797042 /* Country.swift */; };
+		4F0F23DE2C467FB300797042 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DD2C467FB300797042 /* GameScreen.swift */; };
+		4F0F23E02C4681A100797042 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23DF2C4681A100797042 /* Game.swift */; };
 		4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */; };
 		4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C02C46608400FE68D9 /* MainScreen.swift */; };
 		4FFBC3C32C46608500FE68D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C22C46608500FE68D9 /* Assets.xcassets */; };
@@ -26,9 +28,7 @@
 		4FFBC3ED2C466D2F00FE68D9 /* Gourmet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3EC2C466D2F00FE68D9 /* Gourmet.swift */; };
 		4FFBC3EF2C466D3700FE68D9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3EE2C466D3700FE68D9 /* Ingredient.swift */; };
 		4FFBC3F12C466EF500FE68D9 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */; };
-		4FFBC3F42C46717E00FE68D9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3F22C46717E00FE68D9 /* Game.swift */; };
 		4FFBC3F62C4671A800FE68D9 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3F52C4671A800FE68D9 /* LoadingScreen.swift */; };
-		A66720F02C4701C80009CD69 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66720EF2C4701C80009CD69 /* GuessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +50,7 @@
 		4FFBC3EC2C466D2F00FE68D9 /* Gourmet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gourmet.swift; sourceTree = "<group>"; };
 		4FFBC3EE2C466D3700FE68D9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
-		4FFBC3F22C46717E00FE68D9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4FFBC3F52C4671A800FE68D9 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
-		A66720EF2C4701C80009CD69 /* GuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +72,14 @@
 				4F0F23DA2C4678DA00797042 /* Country.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		4F0F23DC2C467FA700797042 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4F0F23DD2C467FB300797042 /* GameScreen.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		4FFBC3B22C46608400FE68D9 = {
@@ -123,10 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				4F0F23D92C4678CD00797042 /* Enumerations */,
-				4FFBC3F32C46717E00FE68D9 /* Model */,
 				4FFBC3E52C46670000FE68D9 /* Extensions */,
 				4FFBC3D02C46622B00FE68D9 /* Network */,
 				4FFBC3F02C466EF500FE68D9 /* AppUtils.swift */,
+				4F0F23DF2C4681A100797042 /* Game.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 		4FFBC3CE2C46620D00FE68D9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4F0F23DC2C467FA700797042 /* Game */,
 				4FFBC3D12C46624300FE68D9 /* Launchscreen */,
 				4FFBC3CF2C46621200FE68D9 /* Main */,
 			);
@@ -301,6 +308,8 @@
 				4FFBC3EF2C466D3700FE68D9 /* Ingredient.swift in Sources */,
 				4F0F23DB2C4678DA00797042 /* Country.swift in Sources */,
 				4FFBC3E72C46670800FE68D9 /* Color.swift in Sources */,
+				4F0F23E02C4681A100797042 /* Game.swift in Sources */,
+				4F0F23DE2C467FB300797042 /* GameScreen.swift in Sources */,
 				4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */,
 				4FFBC3E02C46647600FE68D9 /* ErrorObj.swift in Sources */,
 			);
