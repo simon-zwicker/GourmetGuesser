@@ -35,7 +35,17 @@ extension FoodGameAPI: Endpoint {
     }
 
     // MARK: - Parameters
-    var parameters: [String : Any] { [:] }
+    var parameters: [String : Any] {
+        var parameters: [String: Any] = [:]
+        switch self {
+        case .ingredients:
+            parameters["perPage"] = "100"
+            return parameters
+
+        default:
+            return parameters
+        }
+    }
 
     // MARK: - Encoding
     var encoding: Encoding {
