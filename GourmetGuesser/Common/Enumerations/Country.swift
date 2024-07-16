@@ -140,7 +140,7 @@ extension Country {
         case .cro: "🇭🇷"
         case .xk: "🇽🇰"
         case .ita: "🇮🇹"
-        case .isl: "🇦🇽"
+        case .isl: "🇮🇸"
         case .ire: "🇮🇪"
         case .gre: "🇬🇷"
         case .fra: "🇫🇷"
