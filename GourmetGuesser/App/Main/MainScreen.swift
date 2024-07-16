@@ -27,7 +27,7 @@ struct MainScreen: View {
                         )
                     )
 
-                GameScreen()
+                //GameScreen()
             }
         }
     }
