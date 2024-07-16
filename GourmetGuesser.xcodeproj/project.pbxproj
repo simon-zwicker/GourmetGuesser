@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */; };
-		4FFBC3C12C46608400FE68D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C02C46608400FE68D9 /* ContentView.swift */; };
+		4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C02C46608400FE68D9 /* MainScreen.swift */; };
 		4FFBC3C32C46608500FE68D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C22C46608500FE68D9 /* Assets.xcassets */; };
 		4FFBC3C62C46608500FE68D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C52C46608500FE68D9 /* Preview Assets.xcassets */; };
+		4FFBC3D32C46624D00FE68D9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3D22C46624D00FE68D9 /* Launch Screen.storyboard */; };
+		4FFBC3D62C4663CB00FE68D9 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4FFBC3D52C4663CB00FE68D9 /* SwiftChameleon */; };
+		4FFBC3D92C4663D300FE68D9 /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4FFBC3D82C4663D300FE68D9 /* Mammut */; };
+		4FFBC3DC2C4663F800FE68D9 /* NetworkEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3DB2C4663F800FE68D9 /* NetworkEnv.swift */; };
+		4FFBC3DE2C46642800FE68D9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3DD2C46642800FE68D9 /* Network.swift */; };
+		4FFBC3E02C46647600FE68D9 /* ErrorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3DF2C46647600FE68D9 /* ErrorObj.swift */; };
+		4FFBC3E22C46649200FE68D9 /* OpenFoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3E12C46649200FE68D9 /* OpenFoodAPI.swift */; };
+		4FFBC3E42C46649A00FE68D9 /* FoodGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3E32C46649A00FE68D9 /* FoodGameAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4FFBC3BB2C46608400FE68D9 /* GourmetGuesser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetGuesser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetGuesserApp.swift; sourceTree = "<group>"; };
-		4FFBC3C02C46608400FE68D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4FFBC3C02C46608400FE68D9 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		4FFBC3C22C46608500FE68D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FFBC3C52C46608500FE68D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FFBC3D22C46624D00FE68D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4FFBC3DB2C4663F800FE68D9 /* NetworkEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnv.swift; sourceTree = "<group>"; };
+		4FFBC3DD2C46642800FE68D9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		4FFBC3DF2C46647600FE68D9 /* ErrorObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObj.swift; sourceTree = "<group>"; };
+		4FFBC3E12C46649200FE68D9 /* OpenFoodAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodAPI.swift; sourceTree = "<group>"; };
+		4FFBC3E32C46649A00FE68D9 /* FoodGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGameAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFBC3D62C4663CB00FE68D9 /* SwiftChameleon in Frameworks */,
+				4FFBC3D92C4663D300FE68D9 /* Mammut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +67,9 @@
 		4FFBC3BD2C46608400FE68D9 /* GourmetGuesser */ = {
 			isa = PBXGroup;
 			children = (
-				4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */,
-				4FFBC3C02C46608400FE68D9 /* ContentView.swift */,
-				4FFBC3C22C46608500FE68D9 /* Assets.xcassets */,
+				4FFBC3CE2C46620D00FE68D9 /* App */,
+				4FFBC3CD2C46620900FE68D9 /* Common */,
+				4FFBC3CC2C46620300FE68D9 /* Resources */,
 				4FFBC3C42C46608500FE68D9 /* Preview Content */,
 			);
 			path = GourmetGuesser;
@@ -65,6 +81,68 @@
 				4FFBC3C52C46608500FE68D9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4FFBC3CC2C46620300FE68D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3C22C46608500FE68D9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4FFBC3CD2C46620900FE68D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3D02C46622B00FE68D9 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4FFBC3CE2C46620D00FE68D9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3D12C46624300FE68D9 /* Launchscreen */,
+				4FFBC3CF2C46621200FE68D9 /* Main */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4FFBC3CF2C46621200FE68D9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */,
+				4FFBC3C02C46608400FE68D9 /* MainScreen.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4FFBC3D02C46622B00FE68D9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3DA2C4663EB00FE68D9 /* Responses */,
+				4FFBC3DB2C4663F800FE68D9 /* NetworkEnv.swift */,
+				4FFBC3DD2C46642800FE68D9 /* Network.swift */,
+				4FFBC3E12C46649200FE68D9 /* OpenFoodAPI.swift */,
+				4FFBC3E32C46649A00FE68D9 /* FoodGameAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4FFBC3D12C46624300FE68D9 /* Launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3D22C46624D00FE68D9 /* Launch Screen.storyboard */,
+			);
+			path = Launchscreen;
+			sourceTree = "<group>";
+		};
+		4FFBC3DA2C4663EB00FE68D9 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBC3DF2C46647600FE68D9 /* ErrorObj.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +161,10 @@
 			dependencies = (
 			);
 			name = GourmetGuesser;
+			packageProductDependencies = (
+				4FFBC3D52C4663CB00FE68D9 /* SwiftChameleon */,
+				4FFBC3D82C4663D300FE68D9 /* Mammut */,
+			);
 			productName = GourmetGuesser;
 			productReference = 4FFBC3BB2C46608400FE68D9 /* GourmetGuesser.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +193,10 @@
 				Base,
 			);
 			mainGroup = 4FFBC3B22C46608400FE68D9;
+			packageReferences = (
+				4FFBC3D42C4663CB00FE68D9 /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+				4FFBC3D72C4663D300FE68D9 /* XCRemoteSwiftPackageReference "Mammut" */,
+			);
 			productRefGroup = 4FFBC3BC2C46608400FE68D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFBC3D32C46624D00FE68D9 /* Launch Screen.storyboard in Resources */,
 				4FFBC3C62C46608500FE68D9 /* Preview Assets.xcassets in Resources */,
 				4FFBC3C32C46608500FE68D9 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFBC3C12C46608400FE68D9 /* ContentView.swift in Sources */,
+				4FFBC3DC2C4663F800FE68D9 /* NetworkEnv.swift in Sources */,
+				4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */,
+				4FFBC3E42C46649A00FE68D9 /* FoodGameAPI.swift in Sources */,
+				4FFBC3E22C46649200FE68D9 /* OpenFoodAPI.swift in Sources */,
+				4FFBC3DE2C46642800FE68D9 /* Network.swift in Sources */,
 				4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */,
+				4FFBC3E02C46647600FE68D9 /* ErrorObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +370,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +381,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.GourmetGuesser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,8 +405,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +416,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.GourmetGuesser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +448,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4FFBC3D42C4663CB00FE68D9 /* XCRemoteSwiftPackageReference "SwiftChameleon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simon-zwicker/SwiftChameleon";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		4FFBC3D72C4663D300FE68D9 /* XCRemoteSwiftPackageReference "Mammut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simon-zwicker/Mammut";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4FFBC3D52C4663CB00FE68D9 /* SwiftChameleon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FFBC3D42C4663CB00FE68D9 /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
+			productName = SwiftChameleon;
+		};
+		4FFBC3D82C4663D300FE68D9 /* Mammut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FFBC3D72C4663D300FE68D9 /* XCRemoteSwiftPackageReference "Mammut" */;
+			productName = Mammut;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FFBC3B32C46608400FE68D9 /* Project object */;
 }
