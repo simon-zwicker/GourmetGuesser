@@ -14,20 +14,9 @@ struct MainScreen: View {
         NavigationStack {
             ZStack {
                 Color.clear.ignoresSafeArea()
-                    .background(
-                        LinearGradient(
-                            colors: [
-                                .accentColor,
-                                .mainBackground,
-                                .mainBackground.opacity(0.66),
-                                .mainBackground.opacity(0.44)
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
+                    .background(.mainBackground.gradient)
 
-                //GameScreen()
+                GameScreen()
             }
         }
     }

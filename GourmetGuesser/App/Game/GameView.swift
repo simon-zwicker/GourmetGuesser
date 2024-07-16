@@ -34,7 +34,7 @@ struct GameView: View {
                 }
             } else {
                 VStack {
-                    Spacer()
+                    BouncingView()
 
                     LazyVGrid(columns: [
                         GridItem(.flexible(minimum: 100.0)),
