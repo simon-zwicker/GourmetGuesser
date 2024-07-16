@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartView: View {
 
-    @Binding var game: Game
+    @Binding var game: GameUtils
     private var notStartable: Bool {
         game.playerName.isEmpty
     }

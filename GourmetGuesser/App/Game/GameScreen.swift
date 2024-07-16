@@ -11,7 +11,7 @@ struct GameScreen: View {
 
     // MARK: - Properties
     @Environment(AppUtils.self) private var utils
-    @State var game: Game = .init()
+    @State var game: GameUtils = .init()
 
     var body: some View {
         ZStack {

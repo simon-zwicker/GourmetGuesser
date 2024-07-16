@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class Game {
+class GameUtils {
     var playerName: String = ""
     var hardMode: Bool = false
 

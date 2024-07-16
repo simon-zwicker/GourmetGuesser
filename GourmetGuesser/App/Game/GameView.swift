@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameView: View {
 
-    @Binding var game: Game
+    @Binding var game: GameUtils
     @State private var timeRemaining = 3
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
