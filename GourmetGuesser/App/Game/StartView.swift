@@ -22,19 +22,38 @@ struct StartView: View {
                 .scaledToFit()
                 .frame(width: 150, height: 150.0)
 
-            VStack(alignment: .leading) {
+            VStack() {
                 Text("Starte dein Spiel")
-                    .font(.Bold.regular)
+                    .font(.Bold.title3)
                 Text("Gebe deinen Spielernamen ein und los geht es!")
-                    .font(.Regular.small)
+                    .font(.Regular.regular)
 
                 TextField("Spielername", text: $game.playerName)
-                    .textFieldStyle(.roundedBorder)
+                    .font(.Bold.title)
+                    .multilineTextAlignment(.center)
+                    .padding(15.0)
+                    .foregroundStyle(.accent)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.accent, lineWidth: 2.0)
+                    )
+                    .tint(.accent)
+                    .frame(maxWidth: .infinity)
+                    .padding(20.0)
 
-                Toggle(isOn: $hardMode, label: {
-                    Text("Hardmode")
-                        .font(.Bold.regular)
-                })
+                VStack(spacing: 0) {
+                    Toggle(isOn: $hardMode, label: {
+                        Text("Hardmode")
+                            .font(.Bold.regular)
+                    })
+                    .tint(.accent)
+
+                    Text("☠️☠️☠️")
+                        .padding(.top, 15.0)
+                    Text("Im Hardmode gibt es keine Bezeichnung für Länder oder Zutaten")
+                        .font(.Bold.small)
+                }
+                .frame(width: 250)
             }
 
             Text("Starten")
@@ -42,6 +61,7 @@ struct StartView: View {
                 .padding(.horizontal, 30.0)
                 .padding(.vertical, 15.0)
                 .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 10.0)
                         .fill(notStartable ? .gray.opacity(0.5): .accent)
