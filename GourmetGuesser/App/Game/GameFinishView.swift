@@ -10,6 +10,7 @@ import SwiftUI
 struct GameFinishView: View {
 
     @Binding var game: GameUtils
+    @Binding var highscoreAdding: Bool
     var buttonNew: () -> Void
     var buttonScore: () -> Void
     var buttonShow: () -> Void
@@ -24,18 +25,24 @@ struct GameFinishView: View {
                 .font(.Regular.title3)
 
             VStack {
-                Text("🏆 Score eintragen")
-                    .font(.Bold.regular)
-                    .padding(.horizontal, 30.0)
-                    .padding(.vertical, 15.0)
-                    .foregroundStyle(.white)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .fill(.accent)
-                    )
-                    .button {
-                        buttonScore()
-                    }
+                ZStack {
+                    Text("🏆 Score speichern")
+                        .font(.Bold.regular)
+                        .opacity(highscoreAdding ? 0.0: 1.0)
+
+                    ProgressView()
+                        .opacity(highscoreAdding ? 1.0: 0.0)
+                }
+                .padding(.horizontal, 30.0)
+                .padding(.vertical, 15.0)
+                .foregroundStyle(.white)
+                .background(
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(.accent)
+                )
+                .button {
+                    buttonScore()
+                }
 
                 Text("🧾 Gerichte ansehen")
                     .font(.Bold.regular)
@@ -62,8 +69,8 @@ struct GameFinishView: View {
                     .button {
                         buttonNew()
                     }
-            }
-            .padding(.top, 30.0)
+                }
+                .padding(.top, 30.0)
         }
     }
 }

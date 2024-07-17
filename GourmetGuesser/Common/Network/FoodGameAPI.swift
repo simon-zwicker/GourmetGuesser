@@ -37,7 +37,9 @@ extension FoodGameAPI: Endpoint {
 
     // MARK: - Headers
     var headers: [MammutHeader] {
-        .init()
+        var headers: [MammutHeader] = .init()
+        headers.append(.content(.type("application/json")))
+        return headers
     }
 
     // MARK: - Parameters

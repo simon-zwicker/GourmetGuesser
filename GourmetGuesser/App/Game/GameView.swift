@@ -12,6 +12,7 @@ struct GameView: View {
     @Binding var game: GameUtils
     @State private var timeRemaining = 3
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var highscoreAdding: Bool = false
 
     var body: some View {
         VStack(spacing: 20.0) {
@@ -61,10 +62,14 @@ struct GameView: View {
                                         nextRound()
                                     }
                             } else  if game.currentRound == 4 {
-                                GameFinishView(game: $game) {
+                                GameFinishView(game: $game, highscoreAdding: $highscoreAdding) {
                                     newGame()
                                 } buttonScore: {
-
+                                    if !highscoreAdding {
+                                        Task {
+                                            await addToHighscore()
+                                        }
+                                    }
                                 } buttonShow: {
                                     
                                 }
@@ -97,7 +102,22 @@ struct GameView: View {
 
     private func newGame() {
         game.startGame()
+        self.highscoreAdding.setFalse()
         self.timeRemaining = 3
         self.timer = self.timer.upstream.autoconnect()
+    }
+
+    private func addToHighscore() async {
+        self.highscoreAdding.setTrue()
+        do {
+            let _ = try await Network.request(
+                Score.self,
+                environment: .foodGame,
+                endpoint: FoodGameAPI.addHighscore(game.playerName, game.gamePoints)
+            )
+            self.highscoreAdding.setFalse()
+        } catch {
+            print("Error on adding Highscore: \(error.localizedDescription)")
+        }
     }
 }
