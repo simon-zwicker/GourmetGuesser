@@ -116,4 +116,13 @@ class GameUtils {
         self.allIngredients = ingredients
         self.allCountries = countries
     }
+
+    func getIngredients(_ gourmet: Gourmet) -> [Ingredient] {
+        var ingredients: [Ingredient] = []
+        for ingredient in gourmet.ingredients {
+            guard let first = allIngredients.first(where: { $0.id == ingredient }) else { continue }
+            ingredients.append(first)
+        }
+        return ingredients
+    }
 }
