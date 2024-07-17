@@ -15,6 +15,7 @@ struct GameFinishView: View {
     var buttonScore: () -> Void
     var buttonShow: () -> Void
     var buttonHighscore: () -> Void
+    var buttonDishes: () -> Void
 
     var body: some View {
         VStack(spacing: 5.0) {
@@ -57,7 +58,7 @@ struct GameFinishView: View {
                                 .fill(.accent)
                         )
                         .button {
-                            buttonScore()
+                            buttonDishes()
                         }
                         .frame(maxWidth: .infinity)
                 }

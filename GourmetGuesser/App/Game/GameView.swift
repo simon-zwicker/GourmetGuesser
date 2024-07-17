@@ -15,6 +15,7 @@ struct GameView: View {
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var highscoreAdding: Bool = false
     @State var showHighscore: Bool = false
+    @State var showDishes: Bool = false
 
     var body: some View {
         VStack(spacing: 20.0) {
@@ -76,6 +77,8 @@ struct GameView: View {
                                     
                                 } buttonHighscore: {
                                     showHighscore.setTrue()
+                                } buttonDishes: {
+                                    showDishes.setTrue()
                                 }
 
                             }
@@ -122,6 +125,9 @@ struct GameView: View {
                     await utils.updateScore()
                 }
             }
+        })
+        .sheet(isPresented: $showDishes, content: {
+            DishesNavigation(gameUtils: $game)
         })
     }
 

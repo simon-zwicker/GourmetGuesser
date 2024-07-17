@@ -47,7 +47,7 @@ class GameUtils {
         currentIngredients.compactMap({ Bouncy(ingredient: $0) })
     }
 
-    private var gourmetsRound: [Int: Gourmet] = [:]
+    private(set) var gourmetsRound: [Int: Gourmet] = [:]
     private(set) var gameIsRunning: Bool = false
     private(set) var countryRound: [Int: [Country]] = [:]
     var selected: Country?
