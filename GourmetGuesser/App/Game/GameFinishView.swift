@@ -13,6 +13,7 @@ struct GameFinishView: View {
     @Binding var highscoreAdding: Bool
     @State var showHighscore: Bool = false
     @State var showDishes: Bool = false
+    @State var scoreSaved: Bool = false
     var buttonNew: () -> Void
     var buttonScore: () -> Void
 
@@ -101,7 +102,10 @@ struct GameFinishView: View {
             }
             .padding(.top, 30.0)
             .onAppear {
-                buttonScore()
+                if !scoreSaved {
+                    buttonScore()
+                    scoreSaved.setTrue()
+                }
             }
         }
         .sheet(isPresented: $showHighscore, content: {
@@ -110,5 +114,6 @@ struct GameFinishView: View {
         .sheet(isPresented: $showDishes, content: {
             DishesNavigation(gameUtils: $game)
         })
+        .interactiveDismissDisabled()
     }
 }
