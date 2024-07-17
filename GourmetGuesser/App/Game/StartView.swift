@@ -49,15 +49,15 @@ struct StartView: View {
                     })
                     .tint(.accent)
 
-                    Text("☠️☠️☠️")
-                        .padding(.top, 15.0)
                     Text("Im Hardmode gibt es keine Bezeichnung für Länder oder Zutaten")
-                        .font(.Bold.small)
+                        .font(.Regular.small)
+                        .foregroundStyle(.gray)
+                        .padding(.top, 15.0)
                 }
                 .frame(width: 250)
             }
 
-            Text("Starten")
+            Text("\(hardMode ? "☠️ Starten ☠️":"Starten")")
                 .font(.Bold.regular)
                 .padding(.horizontal, 30.0)
                 .padding(.vertical, 15.0)
@@ -65,9 +65,10 @@ struct StartView: View {
                 .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 10.0)
-                        .fill(notStartable ? .gray.opacity(0.5): .accent)
+                        .fill(notStartable ? .gray.opacity(0.5): hardMode ? .red: .accent)
                 )
                 .disabled(notStartable)
+                .contentTransition(.interpolate)
                 .button {
                     game.startGame()
                 }
