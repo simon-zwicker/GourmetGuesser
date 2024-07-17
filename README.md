@@ -1,6 +1,7 @@
 # GourmetGuesser App (Mini-Hackathon Day 2)
 
-![Marketing]()
+![Marketing](https://github.com/simon-zwicker/GourmetGuesser/blob/main/Marketing/Screenshot_2024-07-17_at_14.45.06.png)
+![Marketing2](https://github.com/simon-zwicker/GourmetGuesser/blob/main/Marketing/Screenshot_2024-07-17_at_14.45.06.png)
 ## Information
 We present an swift app (SwiftUI) which is a little game. Based on the ingredients of famous national dishes, you have to guess the country.
 
