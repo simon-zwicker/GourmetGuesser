@@ -74,6 +74,21 @@ struct DishDetail: View {
                     .opacity(showLoading ? 1.0: 0.0)
 
                 CalDisplay(showLoading: $showLoading, dish: dish)
+                
+                if !dish.chefkoch.isEmpty, let url = URL(string: dish.chefkoch) {
+                    Link("Rezept", destination: url)
+                        .font(.Bold.regular)
+                        .padding(.horizontal, 30.0)
+                        .padding(.vertical, 15.0)
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .fill(.accent)
+                        )
+                        .contentTransition(.interpolate)
+                        .padding(.horizontal, 30)
+                }
             }
         }
         .navigationTitle(Country(rawValue: dish.country)?.name ?? "-")
