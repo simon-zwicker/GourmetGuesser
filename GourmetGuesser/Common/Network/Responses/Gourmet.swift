@@ -10,4 +10,5 @@ struct Gourmet: Codable, Hashable {
     let country: String
     let food: String
     let ingredients: [String]
+    let chefkoch: String
 }
