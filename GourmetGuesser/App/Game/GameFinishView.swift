@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameFinishView: View {
 
+    @Environment(\.dismiss) var dismiss
     @Binding var game: GameUtils
     @Binding var highscoreAdding: Bool
     @State var showHighscore: Bool = false
@@ -58,6 +59,7 @@ struct GameFinishView: View {
                     )
                     .button {
                         buttonNew()
+                        dismiss()
                     }
                 }
 
