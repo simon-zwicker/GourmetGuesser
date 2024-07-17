@@ -10,6 +10,7 @@ import SwiftUI
 struct StartView: View {
 
     @Binding var game: GameUtils
+    @AppStorage("gameHardMode") var hardMode: Bool = false
     private var notStartable: Bool {
         game.playerName.isEmpty
     }
@@ -30,7 +31,7 @@ struct StartView: View {
                 TextField("Spielername", text: $game.playerName)
                     .textFieldStyle(.roundedBorder)
 
-                Toggle(isOn: $game.hardMode, label: {
+                Toggle(isOn: $hardMode, label: {
                     Text("Hardmode")
                         .font(.Bold.regular)
                 })
