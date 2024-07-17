@@ -11,16 +11,7 @@ struct RingTimer: View {
     @Binding var timer: Timer?
     @Binding var secondsRemaining: Double
     var body: some View {
-        //secondsRemaining get divided by 30, 30 is hardcoded in RingView
         RingView(secondsRemaining: secondsRemaining)
-            .onAppear(){
-                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                    secondsRemaining -= 1
-                    if secondsRemaining == 0 {
-                        timer.invalidate()
-                    }
-                }
-            }
     }
 }
 

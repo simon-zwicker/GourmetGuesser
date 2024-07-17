@@ -14,27 +14,37 @@ class GameUtils {
     // MARK: - RoundData
     let maxRounds: Int = 5
     private(set) var currentRound: Int = 0
-    
+    var gamePoints: Int = 0
+    private var pointsLastRount: Int = 0
+    private var maxTime: Int = 33
+    private var roundStartDate: Date = .now
+    private var roundEndDate: Date = .now
+
+
     var currentCountries: [Country] {
         countryRound[currentRound] ?? []
     }
 
     var currentGourmet: Gourmet? {
-        return gourmetsRound[currentRound]
+        gourmetsRound[currentRound]
     }
 
     var selectedCorrectCountry: Bool {
         selected?.rawValue == currentGourmet?.country
     }
 
-    var bouncy: [Bouncy] {
+    var currentIngredients: [Ingredient] {
         guard let currentGourmet else { return [] }
         var ingredients: [Ingredient] = []
         for ingredient in currentGourmet.ingredients {
             guard let first = allIngredients.first(where: { $0.id == ingredient }) else { continue }
             ingredients.append(first)
         }
-        return ingredients.compactMap({ Bouncy(ingredient: $0) })
+        return ingredients
+    }
+
+    var bouncy: [Bouncy] {
+        currentIngredients.compactMap({ Bouncy(ingredient: $0) })
     }
 
     private var gourmetsRound: [Int: Gourmet] = [:]
@@ -50,11 +60,42 @@ class GameUtils {
     func nextRound() {
         currentRound += 1
         selected = nil
+        roundStartDate = .now
+    }
+
+    func addPoints() {
+        roundEndDate = .now
+        guard let difference = Calendar.current.dateComponents(
+            [
+                .year,
+                .month,
+                .day
+            ],
+            from: roundStartDate,
+            to: roundEndDate
+        ).second else { return }
+
+        if selectedCorrectCountry {
+            if difference >= maxTime {
+                pointsLastRount = 10
+            } else {
+                pointsLastRount = (maxTime - difference) * 10
+            }
+            gamePoints += pointsLastRount
+        }
+    }
+
+    func hardModeExtra() {
+        gamePoints += pointsLastRount
     }
 
     func startGame() {
         currentRound = 0
         self.gourmetsRound = [:]
+        self.gamePoints = 0
+        self.pointsLastRount = 0
+        self.selected = nil
+        self.roundStartDate = .now
 
         let randomGourmets = allGourmets.shuffled().prefix(5)
         for (index, gourmet) in randomGourmets.enumerated() {

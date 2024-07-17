@@ -13,11 +13,11 @@ struct BouncingView: View {
                         KFImage(imageUrl)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 50, height: 50)
                     } else {
                         Image("appLogo").resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 50, height: 50)
                     }
 
 

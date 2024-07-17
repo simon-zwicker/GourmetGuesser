@@ -66,4 +66,9 @@ class AppUtils {
             self.countries.append(country)
         }
     }
+
+    func ingredientsByCode(_ code: String?) -> Ingredient? {
+        guard let code else { return nil }
+        return ingredients.first(where: { $0.barcode.description == code })
+    }
 }
