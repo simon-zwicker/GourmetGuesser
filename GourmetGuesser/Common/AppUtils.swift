@@ -79,4 +79,13 @@ class AppUtils {
         guard let code else { return nil }
         return ingredients.first(where: { $0.barcode.description == code })
     }
+
+    func getIngredients(_ gourmet: Gourmet) -> [Ingredient] {
+        var ingredients: [Ingredient] = []
+        for ingredient in gourmet.ingredients {
+            guard let first = self.ingredients.first(where: { $0.id == ingredient }) else { continue }
+            ingredients.append(first)
+        }
+        return ingredients
+    }
 }

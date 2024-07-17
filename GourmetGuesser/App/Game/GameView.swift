@@ -12,7 +12,7 @@ struct GameView: View {
     @Binding var game: GameUtils
     @State private var timeRemaining = 3
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var showHighscore: Bool = false
+    @State var highscoreAdding: Bool = false
     @State var showGameFinish: Bool = false
 
     var body: some View {
@@ -98,8 +98,6 @@ struct GameView: View {
                             await addToHighscore()
                         }
                     }
-                } buttonShow: {
-
                 }
                 .padding()
             }

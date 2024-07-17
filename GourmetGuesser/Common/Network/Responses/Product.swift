@@ -9,12 +9,12 @@ import SwiftUI
 
 struct Product: Codable, Identifiable {
     let id: UUID = UUID()
-    let brands: String
-    let code: String
+    let brands: String?
+    let code: String?
     let imageString: String?
-    let nutriments: Nutriments
-    let name: String
-    let nameDE: String
+    let nutriments: Nutriments?
+    let name: String?
+    let nameDE: String?
 
     enum CodingKeys: String, CodingKey {
         case brands

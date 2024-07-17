@@ -15,7 +15,6 @@ struct GameFinishView: View {
     @State var showDishes: Bool = false
     var buttonNew: () -> Void
     var buttonScore: () -> Void
-    var buttonShow: () -> Void
 
     var body: some View {
         VStack(spacing: 5.0) {
@@ -41,7 +40,7 @@ struct GameFinishView: View {
                             .fill(.accent)
                     )
                     .button {
-                        showDishes()
+                        showDishes.setTrue()
                     }
 
                     VStack(spacing: 3.0) {
