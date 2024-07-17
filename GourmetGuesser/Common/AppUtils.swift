@@ -32,6 +32,14 @@ class AppUtils {
         }
     }
 
+    func updateScore() async {
+        do {
+            self.scores = try await fetchScores()
+        } catch {
+            print("Error Fetching Highscore")
+        }
+    }
+
     private func fetchGourmets() async throws -> [Gourmet] {
         let data = try await Network.request(
             PocketBase<Gourmet>.self,

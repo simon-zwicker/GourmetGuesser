@@ -9,10 +9,12 @@ import SwiftUI
 
 struct GameView: View {
 
+    @Environment(AppUtils.self) var utils
     @Binding var game: GameUtils
     @State private var timeRemaining = 3
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var highscoreAdding: Bool = false
+    @State var showHighscore: Bool = false
 
     var body: some View {
         VStack(spacing: 20.0) {
@@ -72,6 +74,8 @@ struct GameView: View {
                                     }
                                 } buttonShow: {
                                     
+                                } buttonHighscore: {
+                                    showHighscore.setTrue()
                                 }
 
                             }
@@ -90,6 +94,33 @@ struct GameView: View {
                 timeRemaining -= 1
             } else {
                 timer.upstream.connect().cancel()
+            }
+        })
+        .sheet(isPresented: $showHighscore, content: {
+            ZStack {
+                Color.clear.ignoresSafeArea()
+                    .background(.mainBackground.gradient)
+
+                List {
+                    ForEach(utils.scores.sorted(by: { $0.points > $1.points }), id: \.id) { score in
+                        HStack {
+                            Text(score.name)
+                                .font(.Bold.regular)
+                            Spacer()
+                            Text("\(score.points)")
+                                .font(.Bold.title4)
+                                .foregroundStyle(.accent)
+                        }
+                    }
+                    .listRowBackground(Color.clear)
+                }
+                .listStyle(.plain)
+                .padding(.top, 40.0)
+            }
+            .onAppear {
+                Task {
+                    await utils.updateScore()
+                }
             }
         })
     }
