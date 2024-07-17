@@ -11,11 +11,11 @@ struct GameFinishView: View {
 
     @Binding var game: GameUtils
     @Binding var highscoreAdding: Bool
+    @State var showHighscore: Bool = false
+    @State var showDishes: Bool = false
     var buttonNew: () -> Void
     var buttonScore: () -> Void
     var buttonShow: () -> Void
-    var buttonHighscore: () -> Void
-    var buttonDishes: () -> Void
 
     var body: some View {
         VStack(spacing: 5.0) {
@@ -28,71 +28,88 @@ struct GameFinishView: View {
 
             VStack {
                 HStack {
-                    ZStack {
-                        Text("🏆 Score speichern")
+                    VStack(spacing: 3.0) {
+                        Text("🧾")
+                        Text("Gerichte ansehen")
                             .font(.Bold.regular)
-                            .opacity(highscoreAdding ? 0.0: 1.0)
-
-                        ProgressView()
-                            .opacity(highscoreAdding ? 1.0: 0.0)
                     }
-                    .padding(.horizontal, 30.0)
-                    .padding(.vertical, 15.0)
+                    .padding(.vertical, 10.0)
                     .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
                     .background(
                         RoundedRectangle(cornerRadius: 10.0)
                             .fill(.accent)
                     )
                     .button {
-                        buttonScore()
+                        showDishes()
                     }
-                    .frame(maxWidth: .infinity)
 
-                    Text("🧾 Gerichte ansehen")
-                        .font(.Bold.regular)
-                        .padding(.horizontal, 30.0)
-                        .padding(.vertical, 15.0)
-                        .foregroundStyle(.white)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10.0)
-                                .fill(.accent)
-                        )
-                        .button {
-                            buttonDishes()
-                        }
-                        .frame(maxWidth: .infinity)
+                    VStack(spacing: 3.0) {
+                        Text("🕹️")
+                        Text("Neues Spiel")
+                            .font(.Bold.regular)
+                    }
+                    .padding(.vertical, 10.0)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .fill(.accent)
+                    )
+                    .button {
+                        buttonNew()
+                    }
                 }
 
-                HStack {
-                    Text("🕹️ Neues Spiel")
-                        .font(.Bold.regular)
-                        .padding(.horizontal, 30.0)
-                        .padding(.vertical, 15.0)
-                        .foregroundStyle(.white)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10.0)
-                                .fill(.accent)
-                        )
-                        .button {
-                            buttonNew()
-                        }
+                ZStack {
+                    VStack(spacing: 3.0) {
+                        Text("🏅")
+                        Text("Highscore ansehen")
+                            .font(.Bold.regular)
+                    }
+                    .opacity(highscoreAdding ? 0.0: 1.0)
 
-                    Text("🏅 Highscore ansehen")
+                    ProgressView()
+                        .opacity(highscoreAdding ? 1.0: 0.0)
+                }
+                .padding(.vertical, 10.0)
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(.accent)
+                )
+                .disabled(highscoreAdding)
+                .button {
+                    showHighscore.setTrue()
+                }
+
+                VStack(spacing: 3.0) {
+                    Text("Zum Startbildschirm")
                         .font(.Bold.regular)
-                        .padding(.horizontal, 30.0)
-                        .padding(.vertical, 15.0)
-                        .foregroundStyle(.white)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10.0)
-                                .fill(.accent)
-                        )
-                        .button {
-                            buttonHighscore()
-                        }
+                }
+                .padding(.vertical, 10.0)
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(.accent)
+                )
+                .button {
+                    game.backToHome()
                 }
 
             }
             .padding(.top, 30.0)
+            .onAppear {
+                buttonScore()
+            }
         }
+        .sheet(isPresented: $showHighscore, content: {
+            HighscoreScreen()
+        })
+        .sheet(isPresented: $showDishes, content: {
+            DishesNavigation(gameUtils: $game)
+        })
     }
 }

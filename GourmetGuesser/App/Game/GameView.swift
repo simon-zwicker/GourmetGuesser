@@ -9,13 +9,11 @@ import SwiftUI
 
 struct GameView: View {
 
-    @Environment(AppUtils.self) var utils
     @Binding var game: GameUtils
     @State private var timeRemaining = 3
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var highscoreAdding: Bool = false
     @State var showHighscore: Bool = false
-    @State var showDishes: Bool = false
+    @State var showGameFinish: Bool = false
 
     var body: some View {
         VStack(spacing: 20.0) {
@@ -64,23 +62,6 @@ struct GameView: View {
                                     .button {
                                         nextRound()
                                     }
-                            } else  if game.currentRound == 4 {
-                                GameFinishView(game: $game, highscoreAdding: $highscoreAdding) {
-                                    newGame()
-                                } buttonScore: {
-                                    if !highscoreAdding {
-                                        Task {
-                                            await addToHighscore()
-                                        }
-                                    }
-                                } buttonShow: {
-                                    
-                                } buttonHighscore: {
-                                    showHighscore.setTrue()
-                                } buttonDishes: {
-                                    showDishes.setTrue()
-                                }
-
                             }
                         }
                     }
@@ -99,35 +80,30 @@ struct GameView: View {
                 timer.upstream.connect().cancel()
             }
         })
-        .sheet(isPresented: $showHighscore, content: {
+        .onChange(of: game.selected) {
+            if game.currentRound == 4, !game.selected.isNil {
+                showGameFinish.setTrue()
+            }
+        }
+        .sheet(isPresented: $showGameFinish, content: {
             ZStack {
                 Color.clear.ignoresSafeArea()
                     .background(.mainBackground.gradient)
-
-                List {
-                    ForEach(utils.scores.sorted(by: { $0.points > $1.points }), id: \.id) { score in
-                        HStack {
-                            Text(score.name)
-                                .font(.Bold.regular)
-                            Spacer()
-                            Text("\(score.points)")
-                                .font(.Bold.title4)
-                                .foregroundStyle(.accent)
+                
+                GameFinishView(game: $game, highscoreAdding: $highscoreAdding) {
+                    newGame()
+                } buttonScore: {
+                    if !highscoreAdding {
+                        Task {
+                            await addToHighscore()
                         }
                     }
-                    .listRowBackground(Color.clear)
+                } buttonShow: {
+
                 }
-                .listStyle(.plain)
-                .padding(.top, 40.0)
+                .padding()
             }
-            .onAppear {
-                Task {
-                    await utils.updateScore()
-                }
-            }
-        })
-        .sheet(isPresented: $showDishes, content: {
-            DishesNavigation(gameUtils: $game)
+            .presentationDetents([.medium])
         })
     }
 

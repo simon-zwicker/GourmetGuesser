@@ -121,4 +121,15 @@ class GameUtils {
         }
         return ingredients
     }
+
+    func backToHome() {
+        self.playerName = ""
+        self.gameIsRunning = false
+        currentRound = 0
+        self.gourmetsRound = [:]
+        self.gamePoints = 0
+        self.pointsLastRount = 0
+        self.selected = nil
+        self.roundStartDate = .now
+    }
 }
