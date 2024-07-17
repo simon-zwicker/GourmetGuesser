@@ -45,7 +45,10 @@ extension FoodGameAPI: Endpoint {
         var parameters: [String: Any] = [:]
         switch self {
         case .ingredients:
-            parameters["perPage"] = "100"
+            parameters["perPage"] = "150"
+
+        case .gourmet:
+            parameters["perPage"] = "50"
 
         case .addHighscore(let name, let points):
             parameters["name"] = name

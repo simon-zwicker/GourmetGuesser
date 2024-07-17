@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct BouncingView: View {
     @State var bouncy: [Bouncy]
@@ -8,13 +9,20 @@ struct BouncingView: View {
         GeometryReader { geometry in
             ForEach(0..<bouncy.count) { index in
                 VStack {
-                    Image(bouncy[index].image.isEmpty ? "appLogo": bouncy[index].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
+                    if let imageUrl = URL(string: "https://kirreth.pockethost.io/api/files/\(bouncy[index].ingredient.collectionId)/\(bouncy[index].ingredient.id)/\(bouncy[index].ingredient.image)") {
+                        KFImage(imageUrl)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                    } else {
+                        Image("appLogo").resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                    }
+
 
                     if !hardMode {
-                        Text(bouncy[index].name)
+                        Text(bouncy[index].ingredient.name)
                             .font(.Bold.regular)
                     }
                 }

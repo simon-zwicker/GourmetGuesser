@@ -7,6 +7,7 @@
 
 struct Ingredient: Codable, Identifiable {
     let id: String
+    let collectionId: String
     let name: String
     let image: String
     let barcode: Int

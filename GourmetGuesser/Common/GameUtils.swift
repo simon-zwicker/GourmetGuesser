@@ -34,7 +34,7 @@ class GameUtils {
             guard let first = allIngredients.first(where: { $0.id == ingredient }) else { continue }
             ingredients.append(first)
         }
-        return ingredients.compactMap({ Bouncy(name: $0.name, image: "") })
+        return ingredients.compactMap({ Bouncy(ingredient: $0) })
     }
 
     private var gourmetsRound: [Int: Gourmet] = [:]
