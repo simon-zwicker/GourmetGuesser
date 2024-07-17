@@ -17,6 +17,28 @@ We present an swift app (SwiftUI) which is a little game. Based on the ingredien
 ### Authors of the icons (via FlatIcon): 
 - Rohim
 - Freepik
+- popo2021
+- tulpahn
+- Good Ware
+- AngDiz
+- Kanyanee Watanajitkasem
+- Smashicons
+- SA Family
+- rungreangfangsai
+- Nikita Golubev
+- Park Jisun
+- Nsit
+- Adib Sulthon
+- smashingstocks
+- Tinaxarts
+- surang
+- iconixar
+- Vitaly Gorbachev
+- berkahicon
+- icongeek26
+- ekays.dsgn
+- Luvdat
+- David Carapinha
 
 
 
