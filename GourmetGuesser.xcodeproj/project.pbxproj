@@ -39,6 +39,12 @@
 		A61A4BE62C472C4700547024 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BE52C472C4700547024 /* RingShape.swift */; };
 		A61A4BE82C472CAB00547024 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BE72C472CAB00547024 /* Double.swift */; };
 		A61A4BEA2C47313100547024 /* RingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BE92C47313100547024 /* RingTimer.swift */; };
+		A61A4BEC2C4743AD00547024 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BEB2C4743AC00547024 /* Product.swift */; };
+		A61A4BEE2C4743DD00547024 /* Scanned.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BED2C4743DD00547024 /* Scanned.swift */; };
+		A61A4BF02C4743E700547024 /* Nutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BEF2C4743E700547024 /* Nutriments.swift */; };
+		A61A4BF22C4743F000547024 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BF12C4743F000547024 /* ErrorResult.swift */; };
+		A61A4BF52C47448F00547024 /* CalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BF42C47448F00547024 /* CalRow.swift */; };
+		A61A4BF72C47449700547024 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A4BF62C47449700547024 /* CalDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +79,12 @@
 		A61A4BE52C472C4700547024 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		A61A4BE72C472CAB00547024 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		A61A4BE92C47313100547024 /* RingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTimer.swift; sourceTree = "<group>"; };
+		A61A4BEB2C4743AC00547024 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A61A4BED2C4743DD00547024 /* Scanned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanned.swift; sourceTree = "<group>"; };
+		A61A4BEF2C4743E700547024 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutriments.swift; sourceTree = "<group>"; };
+		A61A4BF12C4743F000547024 /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		A61A4BF42C47448F00547024 /* CalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalRow.swift; sourceTree = "<group>"; };
+		A61A4BF62C47449700547024 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +187,7 @@
 		4FFBC3CF2C46621200FE68D9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A61A4BF32C47447E00547024 /* CalDisplay */,
 				A61A4BE22C472BE400547024 /* TimeDisplay */,
 				A61A4BD72C47080C00547024 /* RandomMovingViews */,
 				A66720EE2C4701B90009CD69 /* Game */,
@@ -208,8 +221,12 @@
 		4FFBC3DA2C4663EB00FE68D9 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				A61A4BEF2C4743E700547024 /* Nutriments.swift */,
+				A61A4BED2C4743DD00547024 /* Scanned.swift */,
+				A61A4BEB2C4743AC00547024 /* Product.swift */,
 				4FFBC3DF2C46647600FE68D9 /* ErrorObj.swift */,
 				4FFBC3EA2C466CFF00FE68D9 /* PocketBase.swift */,
+				A61A4BF12C4743F000547024 /* ErrorResult.swift */,
 				4FFBC3EC2C466D2F00FE68D9 /* Gourmet.swift */,
 				4FFBC3EE2C466D3700FE68D9 /* Ingredient.swift */,
 				4F4FA7E02C46BA2C00B4CD89 /* Score.swift */,
@@ -252,6 +269,15 @@
 				A61A4BE92C47313100547024 /* RingTimer.swift */,
 			);
 			path = TimeDisplay;
+			sourceTree = "<group>";
+		};
+		A61A4BF32C47447E00547024 /* CalDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				A61A4BF42C47448F00547024 /* CalRow.swift */,
+				A61A4BF62C47449700547024 /* CalDisplay.swift */,
+			);
+			path = CalDisplay;
 			sourceTree = "<group>";
 		};
 		A66720EE2C4701B90009CD69 /* Game */ = {
@@ -343,8 +369,10 @@
 			files = (
 				4FFBC3DC2C4663F800FE68D9 /* NetworkEnv.swift in Sources */,
 				4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */,
+				A61A4BF02C4743E700547024 /* Nutriments.swift in Sources */,
 				4FFBC3ED2C466D2F00FE68D9 /* Gourmet.swift in Sources */,
 				A61A4BD92C47082C00547024 /* BouncingView.swift in Sources */,
+				A61A4BF22C4743F000547024 /* ErrorResult.swift in Sources */,
 				4FFBC3F12C466EF500FE68D9 /* AppUtils.swift in Sources */,
 				4FFBC3E42C46649A00FE68D9 /* FoodGameAPI.swift in Sources */,
 				A61A4BE42C472BF600547024 /* RingView.swift in Sources */,
@@ -354,6 +382,9 @@
 				4FFBC3DE2C46642800FE68D9 /* Network.swift in Sources */,
 				4FFBC3E92C46672400FE68D9 /* Font.swift in Sources */,
 				4F0F23E22C468D0100797042 /* StartView.swift in Sources */,
+				A61A4BF52C47448F00547024 /* CalRow.swift in Sources */,
+				A61A4BF72C47449700547024 /* CalDisplay.swift in Sources */,
+				A61A4BEC2C4743AD00547024 /* Product.swift in Sources */,
 				4F4FA7E12C46BA2C00B4CD89 /* Score.swift in Sources */,
 				4FFBC3EB2C466CFF00FE68D9 /* PocketBase.swift in Sources */,
 				4FFBC3EF2C466D3700FE68D9 /* Ingredient.swift in Sources */,
@@ -361,6 +392,7 @@
 				4F0F23DB2C4678DA00797042 /* Country.swift in Sources */,
 				4F0F23E42C468D4E00797042 /* GameView.swift in Sources */,
 				4FFBC3E72C46670800FE68D9 /* Color.swift in Sources */,
+				A61A4BEE2C4743DD00547024 /* Scanned.swift in Sources */,
 				A61A4BDF2C4709E900547024 /* GuessView.swift in Sources */,
 				A61A4BE12C4709FA00547024 /* Bouncy.swift in Sources */,
 				A61A4BE62C472C4700547024 /* RingShape.swift in Sources */,
