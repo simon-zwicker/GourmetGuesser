@@ -11,6 +11,7 @@ struct StartView: View {
 
     @Binding var game: GameUtils
     @AppStorage("gameHardMode") var hardMode: Bool = false
+    @State var showHighscore: Bool = false
     private var notStartable: Bool {
         game.playerName.isEmpty
     }
@@ -70,7 +71,24 @@ struct StartView: View {
                 .button {
                     game.startGame()
                 }
+
+            Text("🏅 Highscore anzeigen")
+                .font(.Bold.regular)
+                .padding(.horizontal, 30.0)
+                .padding(.vertical, 15.0)
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(.accent)
+                )
+                .button {
+                    showHighscore.setTrue()
+                }
         }
         .padding()
+        .sheet(isPresented: $showHighscore, content: {
+            HighscoreScreen()
+        })
     }
 }
