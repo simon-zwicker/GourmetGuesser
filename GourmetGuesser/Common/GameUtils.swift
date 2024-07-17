@@ -66,11 +66,7 @@ class GameUtils {
     func addPoints() {
         roundEndDate = .now
         guard let difference = Calendar.current.dateComponents(
-            [
-                .year,
-                .month,
-                .day
-            ],
+            [.second],
             from: roundStartDate,
             to: roundEndDate
         ).second else { return }

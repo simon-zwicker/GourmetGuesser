@@ -14,6 +14,9 @@
 		4F0F23E42C468D4E00797042 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F23E32C468D4E00797042 /* GameView.swift */; };
 		4F4FA7E12C46BA2C00B4CD89 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FA7E02C46BA2C00B4CD89 /* Score.swift */; };
 		4F4FA7E42C4713FB00B4CD89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F4FA7E32C4713FB00B4CD89 /* Kingfisher */; };
+		4F4FA7E62C47C48D00B4CD89 /* GameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FA7E52C47C48D00B4CD89 /* GameHeaderView.swift */; };
+		4F4FA7E82C47C56300B4CD89 /* GameFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FA7E72C47C56300B4CD89 /* GameFinishView.swift */; };
+		4F4FA7EA2C47C62300B4CD89 /* GameCountrySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FA7E92C47C62300B4CD89 /* GameCountrySelection.swift */; };
 		4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */; };
 		4FFBC3C12C46608400FE68D9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C02C46608400FE68D9 /* MainScreen.swift */; };
 		4FFBC3C32C46608500FE68D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBC3C22C46608500FE68D9 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		4F0F23E12C468D0100797042 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		4F0F23E32C468D4E00797042 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4F4FA7E02C46BA2C00B4CD89 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		4F4FA7E52C47C48D00B4CD89 /* GameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHeaderView.swift; sourceTree = "<group>"; };
+		4F4FA7E72C47C56300B4CD89 /* GameFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFinishView.swift; sourceTree = "<group>"; };
+		4F4FA7E92C47C62300B4CD89 /* GameCountrySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCountrySelection.swift; sourceTree = "<group>"; };
 		4FFBC3BB2C46608400FE68D9 /* GourmetGuesser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetGuesser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFBC3BE2C46608400FE68D9 /* GourmetGuesserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetGuesserApp.swift; sourceTree = "<group>"; };
 		4FFBC3C02C46608400FE68D9 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 				4F0F23DD2C467FB300797042 /* GameScreen.swift */,
 				4F0F23E12C468D0100797042 /* StartView.swift */,
 				4F0F23E32C468D4E00797042 /* GameView.swift */,
+				4F4FA7E52C47C48D00B4CD89 /* GameHeaderView.swift */,
+				4F4FA7E72C47C56300B4CD89 /* GameFinishView.swift */,
+				4F4FA7E92C47C62300B4CD89 /* GameCountrySelection.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -391,17 +400,20 @@
 				A61A4BEC2C4743AD00547024 /* Product.swift in Sources */,
 				4F4FA7E12C46BA2C00B4CD89 /* Score.swift in Sources */,
 				4FFBC3EB2C466CFF00FE68D9 /* PocketBase.swift in Sources */,
+				4F4FA7E82C47C56300B4CD89 /* GameFinishView.swift in Sources */,
 				4FFBC3EF2C466D3700FE68D9 /* Ingredient.swift in Sources */,
 				A61A4BEA2C47313100547024 /* RingTimer.swift in Sources */,
 				4F0F23DB2C4678DA00797042 /* Country.swift in Sources */,
 				4F0F23E42C468D4E00797042 /* GameView.swift in Sources */,
 				4FFBC3E72C46670800FE68D9 /* Color.swift in Sources */,
+				4F4FA7E62C47C48D00B4CD89 /* GameHeaderView.swift in Sources */,
 				A61A4BEE2C4743DD00547024 /* Scanned.swift in Sources */,
 				A61A4BDF2C4709E900547024 /* GuessView.swift in Sources */,
 				A61A4BE12C4709FA00547024 /* Bouncy.swift in Sources */,
 				A61A4BE62C472C4700547024 /* RingShape.swift in Sources */,
 				4F0F23E02C4681A100797042 /* GameUtils.swift in Sources */,
 				4F0F23DE2C467FB300797042 /* GameScreen.swift in Sources */,
+				4F4FA7EA2C47C62300B4CD89 /* GameCountrySelection.swift in Sources */,
 				4FFBC3BF2C46608400FE68D9 /* GourmetGuesserApp.swift in Sources */,
 				4FFBC3E02C46647600FE68D9 /* ErrorObj.swift in Sources */,
 			);

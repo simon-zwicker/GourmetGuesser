@@ -10,30 +10,13 @@ import SwiftUI
 struct GameView: View {
 
     @Binding var game: GameUtils
-    @AppStorage("gameHardMode") var hardMode: Bool = false
     @State private var timeRemaining = 3
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack(spacing: 20.0) {
-            HStack {
-                if timeRemaining < 1 {
-                    VStack {
-                        Text("Punkte")
-                            .font(.Regular.small)
 
-                        Text("\(game.gamePoints)")
-                            .font(.Bold.title3)
-                    }
-                    .frame(width: 100)
-                }
-
-                Text("Runde \(game.currentRound + 1)/\(game.maxRounds)")
-                    .font(.Bold.heading1)
-                    .frame(maxWidth: .infinity)
-            }
-            .frame(height: 50.0)
-            .animation(.easeInOut, value: timeRemaining)
+            GameHeaderView(game: $game, timeRemaining: $timeRemaining)
 
             if timeRemaining > 0 {
                 VStack(spacing: 20.0) {
@@ -78,106 +61,21 @@ struct GameView: View {
                                         nextRound()
                                     }
                             } else  if game.currentRound == 4 {
-                                VStack(spacing: 5.0) {
-                                    Text("Du hast")
-                                        .font(.Regular.title3)
-                                    Text("\(game.gamePoints)")
-                                        .font(.Bold.title5)
-                                    Text("Punkte erreicht")
-                                        .font(.Regular.title3)
+                                GameFinishView(game: $game) {
+                                    newGame()
+                                } buttonScore: {
 
-                                    VStack {
-                                        Text("🏆 Score eintragen")
-                                            .font(.Bold.regular)
-                                            .padding(.horizontal, 30.0)
-                                            .padding(.vertical, 15.0)
-                                            .foregroundStyle(.white)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 10.0)
-                                                    .fill(.accent)
-                                            )
-                                            .button {
-
-                                            }
-
-                                        Text("🧾 Gerichte ansehen")
-                                            .font(.Bold.regular)
-                                            .padding(.horizontal, 30.0)
-                                            .padding(.vertical, 15.0)
-                                            .foregroundStyle(.white)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 10.0)
-                                                    .fill(.accent)
-                                            )
-                                            .button {
-
-                                            }
-
-                                        Text("🕹️ Neues Spiel")
-                                            .font(.Bold.regular)
-                                            .padding(.horizontal, 30.0)
-                                            .padding(.vertical, 15.0)
-                                            .foregroundStyle(.white)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 10.0)
-                                                    .fill(.accent)
-                                            )
-                                            .button {
-                                                newGame()
-                                            }
-                                    }
-                                    .padding(.top, 30.0)
+                                } buttonShow: {
+                                    
                                 }
+
                             }
                         }
                     }
 
                     Spacer()
 
-                    LazyVGrid(columns: [
-                        GridItem(.flexible(minimum: 100.0)),
-                        GridItem(.flexible(minimum: 100.0))
-                    ], 
-                    spacing: 10.0,
-                    content: {
-                        ForEach(game.currentCountries, id: \.self) { country in
-                            HStack {
-                                Spacer()
-
-                                VStack {
-                                    Text(country.flag)
-                                        .font(.Regular.extraLarge)
-
-                                    if !hardMode {
-                                        Text(country.name)
-                                            .font(.Bold.regular)
-                                            .foregroundStyle(.black)
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.01)
-                                    }
-                                }
-
-                                Spacer()
-                            }
-                            .padding(30.0)
-                            .background(
-                                RoundedRectangle(cornerRadius: 20.0)
-                                    .stroke(.gray, lineWidth: 2.0)
-                                    .if(country == game.selected, { view in
-                                        view.fill(game.selectedCorrectCountry ? .green: .red)
-                                    })
-                            )
-                            .button {
-                                if game.selected.isNil, game.remainingTime > 0 {
-                                    game.selected = country
-                                    game.addPoints()
-                                    if hardMode {
-                                        game.hardModeExtra()
-                                    }
-                                }
-                            }
-                        }
-                    })
+                    GameCountrySelection(game: $game)
                 }
             }
         }
